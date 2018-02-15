@@ -1,52 +1,38 @@
 import React, { Component } from 'react';
 import Highcharts from 'highcharts';
-import {
-  HighchartsChart, withHighcharts, Title, XAxis, YAxis, TreemapSeries, Legend
-} from 'react-jsx-highcharts';
-require('highcharts/modules/treemap.js')(Highcharts);
-
-const colorAxis = {
-  minColor: '#FFFFFF',
-  maxColor: Highcharts.getOptions().colors[0]
-};
 
 class App extends Component {
 
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      treemapData: [
-        { name: 'A', value: 6, colorValue: 1 },
-        { name: 'B', value: 6, colorValue: 2 },
-        { name: 'C', value: 4, colorValue: 3 },
-        { name: 'D', value: 3, colorValue: 4 },
-        { name: 'E', value: 2, colorValue: 5 },
-        { name: 'F', value: 2, colorValue: 6 },
-        { name: 'G', value: 1, colorValue: 7 }
-      ]
-    };
-  }
+  // constructor (props) {
+  //   super(props);
+  //
+  //   this.state = {
+  //   };
+  // }
 
   render () {
-    const treemapData = this.state.treemapData;
-
     return (
-      <div className="app">
-        <HighchartsChart colorAxis={colorAxis}>
-          <Title>Highcharts Treemap</Title>
-
-          <Legend />
-
-          <XAxis />
-
-          <YAxis id="value">
-            <TreemapSeries id="tree" name="Tree" data={treemapData} layoutAlgorithm="squarified" />
-          </YAxis>
-        </HighchartsChart>
+      <div class="documentation">
+        <h1 class="logo">Elastic</h1>
+        <div class="welcome">
+          <h2>Hey, there!</h2>
+          <p>Here's a small assortment of colors you can use to complete the exercise.</p>
+          <p>Feel free to bring your own styles and get creative!</p>
+        </div>
+        <div class="palette">
+          <div class="color pink"></div>
+          <div class="color green"></div>
+          <div class="color yellow"></div>
+          <div class="color purple"></div>
+          <div class="color gray"></div>
+          <div class="color blackish"></div>
+        </div>
+        <div class="welcome">
+          <p>Remember: if you have any questions, do not hesitate to ask your interviewer!</p>
+        </div>
       </div>
     );
   }
 }
 
-export default withHighcharts(App, Highcharts);
+export default App;
